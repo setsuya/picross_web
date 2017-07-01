@@ -25,7 +25,7 @@
 			$file = scandir("stages/" . $size . "/");
 
 			for($i = 0; $i < count($file); $i++){
-				if(($file[$i] != ".") && ($file[$i] != "..")){
+				if(($file[$i] != ".") && ($file[$i] != "..") && ($file[$i] != ".gitignore")){
 					$list_picross .= "<div class=\"picross_box\"><form method=\"POST\" action=\"play_game.php\"><input type=\"hidden\" name=\"size\" value=\"" . $size . "\" /><input type=\"hidden\" name=\"title\" value=\"" . substr($file[$i], 0, strpos($file[$i], ".")) . "\" />" . search_cookie(substr($file[$i], 0, strpos($file[$i], ".")), $size) . "</form></div>";
 				}
 			}
